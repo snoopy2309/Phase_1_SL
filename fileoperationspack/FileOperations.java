@@ -21,6 +21,18 @@ public class FileOperations {
 		}
 	}
 	public void AddNewFile(String filename,String content) throws IOException {
+		
+		 File dir = new File("/home/aparna/Project_1");
+		 String[] files=dir.list();
+			 for(int i=0;i<files.length;i++) {
+				if(filename.equals(files[i]))
+				{
+					System.out.println("File is already present in the system");
+					return;
+				}
+			 }
+		 
+		
 	      File file = new File("/home/aparna/Project_1/"+filename+".txt");
 	      file.createNewFile();
 	      FileWriter fw=new FileWriter(file);
